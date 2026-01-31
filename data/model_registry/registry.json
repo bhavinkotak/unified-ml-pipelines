@@ -1,0 +1,64 @@
+{
+  "models": {
+    "fraud_detector_v1.0.0_0a182949": {
+      "model_id": "fraud_detector_v1.0.0_0a182949",
+      "model_name": "fraud_detector",
+      "version": "1.0.0",
+      "stage": "production",
+      "metrics": {
+        "accuracy": 0.995,
+        "precision": 0.9950495049504952,
+        "recall": 0.995,
+        "f1_score": 0.9949998749968749,
+        "auc_roc": 0.999825
+      },
+      "parameters": {
+        "C": 1.0,
+        "class_weight": null,
+        "dual": false,
+        "fit_intercept": true,
+        "intercept_scaling": 1,
+        "l1_ratio": null,
+        "max_iter": 1000,
+        "multi_class": "deprecated",
+        "n_jobs": null,
+        "penalty": "l2",
+        "random_state": 42,
+        "solver": "lbfgs",
+        "tol": 0.0001,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "feature_names": [
+        "feature_0",
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4",
+        "feature_5",
+        "feature_6",
+        "feature_7",
+        "feature_8",
+        "feature_9",
+        "feature_10",
+        "feature_11",
+        "feature_12",
+        "feature_13",
+        "feature_14"
+      ],
+      "created_at": "2026-01-31T15:30:42.245704",
+      "created_by": "system",
+      "description": "Fraud detection model trained on synthetic data",
+      "tags": [
+        "logistic_regression",
+        "fraud_detection_demo"
+      ]
+    }
+  },
+  "versions": {
+    "fraud_detector": [
+      "1.0.0"
+    ]
+  },
+  "updated_at": "2026-01-31T15:30:42.246395"
+}

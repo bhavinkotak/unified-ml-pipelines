@@ -1,0 +1,202 @@
+{
+  "features": {
+    "feature_0": {
+      "name": "feature_0",
+      "dtype": "float64",
+      "description": "",
+      "source": "auto_ingest",
+      "transformation": null,
+      "version": "1.0",
+      "created_at": "2026-01-31T15:30:37.855420",
+      "tags": []
+    },
+    "feature_1": {
+      "name": "feature_1",
+      "dtype": "float64",
+      "description": "",
+      "source": "auto_ingest",
+      "transformation": null,
+      "version": "1.0",
+      "created_at": "2026-01-31T15:30:37.856243",
+      "tags": []
+    },
+    "feature_2": {
+      "name": "feature_2",
+      "dtype": "float64",
+      "description": "",
+      "source": "auto_ingest",
+      "transformation": null,
+      "version": "1.0",
+      "created_at": "2026-01-31T15:30:37.856775",
+      "tags": []
+    },
+    "feature_3": {
+      "name": "feature_3",
+      "dtype": "float64",
+      "description": "",
+      "source": "auto_ingest",
+      "transformation": null,
+      "version": "1.0",
+      "created_at": "2026-01-31T15:30:37.857436",
+      "tags": []
+    },
+    "feature_4": {
+      "name": "feature_4",
+      "dtype": "float64",
+      "description": "",
+      "source": "auto_ingest",
+      "transformation": null,
+      "version": "1.0",
+      "created_at": "2026-01-31T15:30:37.857848",
+      "tags": []
+    },
+    "feature_5": {
+      "name": "feature_5",
+      "dtype": "float64",
+      "description": "",
+      "source": "auto_ingest",
+      "transformation": null,
+      "version": "1.0",
+      "created_at": "2026-01-31T15:30:37.858826",
+      "tags": []
+    },
+    "feature_6": {
+      "name": "feature_6",
+      "dtype": "float64",
+      "description": "",
+      "source": "auto_ingest",
+      "transformation": null,
+      "version": "1.0",
+      "created_at": "2026-01-31T15:30:37.859153",
+      "tags": []
+    },
+    "feature_7": {
+      "name": "feature_7",
+      "dtype": "float64",
+      "description": "",
+      "source": "auto_ingest",
+      "transformation": null,
+      "version": "1.0",
+      "created_at": "2026-01-31T15:30:37.859423",
+      "tags": []
+    },
+    "feature_8": {
+      "name": "feature_8",
+      "dtype": "float64",
+      "description": "",
+      "source": "auto_ingest",
+      "transformation": null,
+      "version": "1.0",
+      "created_at": "2026-01-31T15:30:37.859686",
+      "tags": []
+    },
+    "feature_9": {
+      "name": "feature_9",
+      "dtype": "float64",
+      "description": "",
+      "source": "auto_ingest",
+      "transformation": null,
+      "version": "1.0",
+      "created_at": "2026-01-31T15:30:37.859948",
+      "tags": []
+    },
+    "feature_10": {
+      "name": "feature_10",
+      "dtype": "float64",
+      "description": "",
+      "source": "auto_ingest",
+      "transformation": null,
+      "version": "1.0",
+      "created_at": "2026-01-31T15:30:37.860215",
+      "tags": []
+    },
+    "feature_11": {
+      "name": "feature_11",
+      "dtype": "float64",
+      "description": "",
+      "source": "auto_ingest",
+      "transformation": null,
+      "version": "1.0",
+      "created_at": "2026-01-31T15:30:37.860494",
+      "tags": []
+    },
+    "feature_12": {
+      "name": "feature_12",
+      "dtype": "float64",
+      "description": "",
+      "source": "auto_ingest",
+      "transformation": null,
+      "version": "1.0",
+      "created_at": "2026-01-31T15:30:37.860811",
+      "tags": []
+    },
+    "feature_13": {
+      "name": "feature_13",
+      "dtype": "float64",
+      "description": "",
+      "source": "auto_ingest",
+      "transformation": null,
+      "version": "1.0",
+      "created_at": "2026-01-31T15:30:37.861088",
+      "tags": []
+    },
+    "feature_14": {
+      "name": "feature_14",
+      "dtype": "float64",
+      "description": "",
+      "source": "auto_ingest",
+      "transformation": null,
+      "version": "1.0",
+      "created_at": "2026-01-31T15:30:37.861722",
+      "tags": []
+    }
+  },
+  "versions": {
+    "feature_0": [
+      "1.0"
+    ],
+    "feature_1": [
+      "1.0"
+    ],
+    "feature_2": [
+      "1.0"
+    ],
+    "feature_3": [
+      "1.0"
+    ],
+    "feature_4": [
+      "1.0"
+    ],
+    "feature_5": [
+      "1.0"
+    ],
+    "feature_6": [
+      "1.0"
+    ],
+    "feature_7": [
+      "1.0"
+    ],
+    "feature_8": [
+      "1.0"
+    ],
+    "feature_9": [
+      "1.0"
+    ],
+    "feature_10": [
+      "1.0"
+    ],
+    "feature_11": [
+      "1.0"
+    ],
+    "feature_12": [
+      "1.0"
+    ],
+    "feature_13": [
+      "1.0"
+    ],
+    "feature_14": [
+      "1.0"
+    ]
+  },
+  "updated_at": "2026-01-31T15:30:37.861800"
+}

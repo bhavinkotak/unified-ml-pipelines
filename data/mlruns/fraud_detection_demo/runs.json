@@ -1,0 +1,398 @@
+{
+  "run_222e8854ee4d": {
+    "run_id": "run_222e8854ee4d",
+    "run_name": "logistic_regression_run",
+    "status": "completed",
+    "start_time": "2026-01-31T15:30:37.863855",
+    "end_time": "2026-01-31T15:30:37.925632",
+    "parameters": {
+      "model_type": "logistic_regression",
+      "n_features": 15,
+      "n_train_samples": 1600,
+      "C": "1.0",
+      "class_weight": "None",
+      "dual": "False",
+      "fit_intercept": "True",
+      "intercept_scaling": "1",
+      "l1_ratio": "None",
+      "max_iter": "1000",
+      "multi_class": "deprecated",
+      "n_jobs": "None",
+      "penalty": "l2",
+      "random_state": "42",
+      "solver": "lbfgs",
+      "tol": "0.0001",
+      "verbose": "0",
+      "warm_start": "False"
+    },
+    "metrics": {
+      "test_accuracy": 0.995,
+      "test_precision": 0.9950495049504952,
+      "test_recall": 0.995,
+      "test_f1_score": 0.9949998749968749,
+      "test_auc_roc": 0.999825,
+      "train_accuracy": 0.985,
+      "train_precision": 0.9850030312689454,
+      "train_recall": 0.985,
+      "train_f1_score": 0.9849999765624634,
+      "train_auc_roc": 0.9988796874999999,
+      "cv_mean": 0.9824999999999999,
+      "cv_std": 0.0070156076002011415
+    },
+    "metric_history": {
+      "test_accuracy": [
+        {
+          "value": 0.995,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:37.922374"
+        }
+      ],
+      "test_precision": [
+        {
+          "value": 0.9950495049504952,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:37.922783"
+        }
+      ],
+      "test_recall": [
+        {
+          "value": 0.995,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:37.922972"
+        }
+      ],
+      "test_f1_score": [
+        {
+          "value": 0.9949998749968749,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:37.923152"
+        }
+      ],
+      "test_auc_roc": [
+        {
+          "value": 0.999825,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:37.923329"
+        }
+      ],
+      "train_accuracy": [
+        {
+          "value": 0.985,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:37.923684"
+        }
+      ],
+      "train_precision": [
+        {
+          "value": 0.9850030312689454,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:37.923897"
+        }
+      ],
+      "train_recall": [
+        {
+          "value": 0.985,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:37.924112"
+        }
+      ],
+      "train_f1_score": [
+        {
+          "value": 0.9849999765624634,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:37.924338"
+        }
+      ],
+      "train_auc_roc": [
+        {
+          "value": 0.9988796874999999,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:37.924784"
+        }
+      ],
+      "cv_mean": [
+        {
+          "value": 0.9824999999999999,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:37.925045"
+        }
+      ],
+      "cv_std": [
+        {
+          "value": 0.0070156076002011415,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:37.925338"
+        }
+      ]
+    },
+    "tags": {},
+    "artifacts": []
+  },
+  "run_c4a02f815911": {
+    "run_id": "run_c4a02f815911",
+    "run_name": "random_forest_run",
+    "status": "completed",
+    "start_time": "2026-01-31T15:30:37.925928",
+    "end_time": "2026-01-31T15:30:38.822676",
+    "parameters": {
+      "model_type": "random_forest",
+      "n_features": 15,
+      "n_train_samples": 1600,
+      "bootstrap": "True",
+      "ccp_alpha": "0.0",
+      "class_weight": "None",
+      "criterion": "gini",
+      "max_depth": "10",
+      "max_features": "sqrt",
+      "max_leaf_nodes": "None",
+      "max_samples": "None",
+      "min_impurity_decrease": "0.0",
+      "min_samples_leaf": "1",
+      "min_samples_split": "2",
+      "min_weight_fraction_leaf": "0.0",
+      "monotonic_cst": "None",
+      "n_estimators": "100",
+      "n_jobs": "None",
+      "oob_score": "False",
+      "random_state": "42",
+      "verbose": "0",
+      "warm_start": "False"
+    },
+    "metrics": {
+      "test_accuracy": 0.99,
+      "test_precision": 0.9901960784313725,
+      "test_recall": 0.99,
+      "test_f1_score": 0.98999899989999,
+      "test_auc_roc": 0.9997375,
+      "train_accuracy": 1.0,
+      "train_precision": 1.0,
+      "train_recall": 1.0,
+      "train_f1_score": 1.0,
+      "train_auc_roc": 1.0,
+      "cv_mean": 0.984375,
+      "cv_std": 0.010643366478704008
+    },
+    "metric_history": {
+      "test_accuracy": [
+        {
+          "value": 0.99,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:38.819126"
+        }
+      ],
+      "test_precision": [
+        {
+          "value": 0.9901960784313725,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:38.819573"
+        }
+      ],
+      "test_recall": [
+        {
+          "value": 0.99,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:38.820107"
+        }
+      ],
+      "test_f1_score": [
+        {
+          "value": 0.98999899989999,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:38.820401"
+        }
+      ],
+      "test_auc_roc": [
+        {
+          "value": 0.9997375,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:38.820647"
+        }
+      ],
+      "train_accuracy": [
+        {
+          "value": 1.0,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:38.820874"
+        }
+      ],
+      "train_precision": [
+        {
+          "value": 1.0,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:38.821096"
+        }
+      ],
+      "train_recall": [
+        {
+          "value": 1.0,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:38.821337"
+        }
+      ],
+      "train_f1_score": [
+        {
+          "value": 1.0,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:38.821530"
+        }
+      ],
+      "train_auc_roc": [
+        {
+          "value": 1.0,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:38.821718"
+        }
+      ],
+      "cv_mean": [
+        {
+          "value": 0.984375,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:38.822038"
+        }
+      ],
+      "cv_std": [
+        {
+          "value": 0.010643366478704008,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:38.822360"
+        }
+      ]
+    },
+    "tags": {},
+    "artifacts": []
+  },
+  "run_9cfd8904bbe9": {
+    "run_id": "run_9cfd8904bbe9",
+    "run_name": "gradient_boosting_run",
+    "status": "completed",
+    "start_time": "2026-01-31T15:30:38.823011",
+    "end_time": "2026-01-31T15:30:42.243515",
+    "parameters": {
+      "model_type": "gradient_boosting",
+      "n_features": 15,
+      "n_train_samples": 1600,
+      "ccp_alpha": "0.0",
+      "criterion": "friedman_mse",
+      "init": "None",
+      "learning_rate": "0.1",
+      "loss": "log_loss",
+      "max_depth": "5",
+      "max_features": "None",
+      "max_leaf_nodes": "None",
+      "min_impurity_decrease": "0.0",
+      "min_samples_leaf": "1",
+      "min_samples_split": "2",
+      "min_weight_fraction_leaf": "0.0",
+      "n_estimators": "100",
+      "n_iter_no_change": "None",
+      "random_state": "42",
+      "subsample": "1.0",
+      "tol": "0.0001",
+      "validation_fraction": "0.1",
+      "verbose": "0",
+      "warm_start": "False"
+    },
+    "metrics": {
+      "test_accuracy": 0.99,
+      "test_precision": 0.9901960784313725,
+      "test_recall": 0.99,
+      "test_f1_score": 0.98999899989999,
+      "test_auc_roc": 0.999575,
+      "train_accuracy": 1.0,
+      "train_precision": 1.0,
+      "train_recall": 1.0,
+      "train_f1_score": 1.0,
+      "train_auc_roc": 1.0,
+      "cv_mean": 0.9775,
+      "cv_std": 0.008705242673240078
+    },
+    "metric_history": {
+      "test_accuracy": [
+        {
+          "value": 0.99,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:42.239957"
+        }
+      ],
+      "test_precision": [
+        {
+          "value": 0.9901960784313725,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:42.240329"
+        }
+      ],
+      "test_recall": [
+        {
+          "value": 0.99,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:42.240752"
+        }
+      ],
+      "test_f1_score": [
+        {
+          "value": 0.98999899989999,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:42.240975"
+        }
+      ],
+      "test_auc_roc": [
+        {
+          "value": 0.999575,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:42.241240"
+        }
+      ],
+      "train_accuracy": [
+        {
+          "value": 1.0,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:42.241491"
+        }
+      ],
+      "train_precision": [
+        {
+          "value": 1.0,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:42.241745"
+        }
+      ],
+      "train_recall": [
+        {
+          "value": 1.0,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:42.242024"
+        }
+      ],
+      "train_f1_score": [
+        {
+          "value": 1.0,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:42.242288"
+        }
+      ],
+      "train_auc_roc": [
+        {
+          "value": 1.0,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:42.242548"
+        }
+      ],
+      "cv_mean": [
+        {
+          "value": 0.9775,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:42.242834"
+        }
+      ],
+      "cv_std": [
+        {
+          "value": 0.008705242673240078,
+          "step": null,
+          "timestamp": "2026-01-31T15:30:42.243255"
+        }
+      ]
+    },
+    "tags": {},
+    "artifacts": []
+  }
+}
