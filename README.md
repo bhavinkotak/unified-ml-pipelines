@@ -1,5 +1,20 @@
 # Unified ML Pipelines Code Project
 
+<!-- v2-release -->
+## Version 2.0 (November 2026)
+
+The v2 release is a preregistered, reproducible rewrite of the paper:
+**Unified ML Pipelines: A Reproducible Study of Training-Serving Skew, Lineage, and Release Gating**
+
+- Paper, code, data sources, results and tests: [`v2/`](v2/)
+- Archived on Zenodo: [10.5281/zenodo.23970091](https://doi.org/10.5281/zenodo.23970091) (v1: [10.5281/zenodo.18445586](https://doi.org/10.5281/zenodo.18445586))
+- Preregistered verdict: SUPPORTED
+- Reproduce: `python v2/code/run_all.py`
+
+Every number in the v2 paper is produced by this code from logged results. Claims from v1 that had no
+supporting data were removed; `v2/REVIEW.md` lists them.
+<!-- v2-release -->
+
 **Author:** Bhavin Kotak (kotak.bhavin@gmail.com | bhavin.kotak@ibm.com)
 
 Implementation of concepts from the research paper: *"Unified Machine Learning Pipeline Architecture for Enterprise-Scale Model Development and Deployment"*

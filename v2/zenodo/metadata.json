@@ -1,0 +1,67 @@
+{
+  "title": "Unified ML Pipelines: A Reproducible Study of Training-Serving Skew, Lineage, and Release Gating",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "description": "<p>Machine learning systems often compute features twice, once in a batch job for training and again in a per-request service for serving. Any divergence between the two programs causes training-serving skew. Version 1 of this paper argued for unified pipelines built on a single feature definition, but no releasable data stood behind its outcome figures. This version withdraws those figures and measures the central technical claim. We formalise the two feature paths, the skew and disagreement measures, a content-hash lineage record, and a fail-closed release gate. The experiment uses three public OpenML tables with five seeds. Offline, a dual implementation with five documented divergence sources matched the AUC of a single definition; online, its ROC AUC was lower by 0.086, 0.222, and 0.139. Every 95% confidence interval excluded zero, and the preregistered hypothesis was supported. Categorical encoding order caused most of the loss. The request-level skew rate was above 0.96 for every source, the harmless ones included, which makes it a weak proxy for harm. Prediction disagreement tracked harm more closely. The single definition stayed skew-free only while online-store lookups succeeded. Pinned reruns were bit-identical in 15 of 15 cases. When a rerun differed, only a lineage record with resolved seeds and parameters explained it. In a simulated release gate, adding an offline-online replay check raised the share of harmful candidates blocked from 0.522 to 0.970. It also blocked 53 of 98 harmless candidates. Code, data, and results are released so the study can be rerun.</p><p><strong>Changes in version 2.0</strong></p><ul><li>Removed every organisational outcome figure of version 1 (deployment time, incident counts, case-study tables). No releasable data supported them.</li><li>Added a preregistered experiment on three public OpenML tables (adult, bank-marketing, credit-g) with five seeds. It compares a single feature definition with a dual implementation that has five documented divergence sources, and includes a per-source ablation and breakpoint scenarios (store timeouts, heavier missingness, covariate shift).</li><li>Added a rerun study of content-hash lineage records, and a simulated CI release gate.</li><li>Wrote out formal definitions of the system model, the skew and disagreement measures, the lineage record, and the fail-closed gate, and stated how each decision point behaves under missing data, unknown results, and timeouts.</li><li>Replaced blog posts and references that could not be verified with sources checked against a DOI or arXiv record. Added a Threats to Validity section.</li></ul><p>The deposit contains the paper, the experiment code, cached public data with sources and checksums, all result files, tests, and the preregistration. Reproduce with <em>python code/run_all.py</em>.</p>",
+  "creators": [
+    {
+      "name": "Kotak, Bhavin",
+      "affiliation": "IBM, Armonk, NY",
+      "orcid": "0009-0006-4793-7046"
+    }
+  ],
+  "keywords": [
+    "MLOps",
+    "training-serving skew",
+    "feature store",
+    "point-in-time correctness",
+    "data lineage",
+    "reproducibility",
+    "continuous integration",
+    "software engineering for machine learning"
+  ],
+  "license": "cc-by-4.0",
+  "access_right": "open",
+  "version": "2.0",
+  "language": "eng",
+  "references": [
+    "Neoklis Polyzotis, Sudip Roy, Steven Euijong Whang, Martin Zinkevich (2018). Data Lifecycle Challenges in Production Machine Learning: A Survey. ACM SIGMOD Record. https://doi.org/10.1145/3299887.3299891",
+    "Eric Breck, Shanqing Cai, Eric Nielsen, Michael Salib, D. Sculley (2017). The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction. Proc. IEEE Int. Conf. Big Data. https://doi.org/10.1109/BigData.2017.8258038",
+    "Denis Baylor, Eric Breck, Heng-Tze Cheng, Noah Fiedel, Chuan Yu Foo, Zakaria Haque, Salem Haykal, Mustafa Ispir, Vihan Jain, Levent Koc, Chiu Yuen Koo, Lukasz Lew et al. (2017). TFX: A TensorFlow-Based Production-Scale Machine Learning Platform. Proc. 23rd ACM SIGKDD Int. Conf. Knowledge Discovery and Data Mining. https://doi.org/10.1145/3097983.3098021",
+    "Saleema Amershi, Andrew Begel, Christian Bird, Robert DeLine, Harald Gall, Ece Kamar, Nachiappan Nagappan, Besmira Nushi, Thomas Zimmermann (2019). Software Engineering for Machine Learning: A Case Study. Proc. IEEE/ACM 41st Int. Conf. Software Engineering: Software Engineering in Practice (ICSE-SEIP). https://doi.org/10.1109/ICSE-SEIP.2019.00042",
+    "Andrei Paleyes, Raoul-Gabriel Urma, Neil D. Lawrence (2022). Challenges in Deploying Machine Learning: A Survey of Case Studies. ACM Computing Surveys. https://doi.org/10.1145/3533378",
+    "Shreya Shankar, Rolando Garcia, Joseph M. Hellerstein, Aditya G. Parameswaran (2022). Operationalizing Machine Learning: An Interview Study. arXiv:2209.09125 https://arxiv.org/abs/2209.09125",
+    "Lucy Ellen Lwakatare, Aiswarya Raj, Ivica Crnkovic, Jan Bosch, Helena Holmstrom Olsson (2020). Large-Scale Machine Learning Systems in Real-World Industrial Settings: A Review of Challenges and Solutions. Information and Software Technology. https://doi.org/10.1016/j.infsof.2020.106368",
+    "Laurel Orr, Atindriyo Sanyal, Xiao Ling, Karan Goel, Megan Leszczynski (2021). Managing ML Pipelines: Feature Stores and the Coming Wave of Embedding Ecosystems. Proceedings of the VLDB Endowment. https://doi.org/10.14778/3476311.3476402",
+    "Feast Authors (n.d.). Feast: An Open Source Feature Store for Machine Learning. Software documentation. https://docs.feast.dev",
+    "Dominik Kreuzberger, Niklas Kuhl, Sebastian Hirschl (2023). Machine Learning Operations (MLOps): Overview, Definition, and Architecture. IEEE Access. https://doi.org/10.1109/ACCESS.2023.3262138",
+    "OpenGitOps Project (n.d.). GitOps Principles v1.0.0. Project documentation. https://opengitops.dev",
+    "Doris Xin, Hui Miao, Aditya Parameswaran, Neoklis Polyzotis (2021). Production Machine Learning Pipelines: Empirical Analysis and Optimization Opportunities. Proc. Int. Conf. Management of Data (SIGMOD). https://doi.org/10.1145/3448016.3457566",
+    "Sebastian Schelter, Dustin Lange, Philipp Schmidt, Meltem Celikel, Felix Biessmann, Andreas Grafberger (2018). Automating Large-Scale Data Quality Verification. Proceedings of the VLDB Endowment. https://doi.org/10.14778/3229863.3229867",
+    "Jie M. Zhang, Mark Harman, Lei Ma, Yang Liu (2022). Machine Learning Testing: Survey, Landscapes and Horizons. IEEE Transactions on Software Engineering. https://doi.org/10.1109/TSE.2019.2962027",
+    "Cedric Renggli, Bojan Karlas, Bolin Ding, Feng Liu, Kevin Schawinski, Wentao Wu, Ce Zhang (2019). Continuous Integration of Machine Learning Models with ease.ml/ci: Towards a Rigorous Yet Practical Treatment. arXiv:1903.00278 https://arxiv.org/abs/1903.00278",
+    "Shachar Kaufman, Saharon Rosset, Claudia Perlich, Ori Stitelman (2012). Leakage in Data Mining: Formulation, Detection, and Avoidance. ACM Transactions on Knowledge Discovery from Data. https://doi.org/10.1145/2382577.2382579",
+    "Joao Gama, Indre Zliobaite, Albert Bifet, Mykola Pechenizkiy, Abdelhamid Bouchachia (2014). A Survey on Concept Drift Adaptation. ACM Computing Surveys. https://doi.org/10.1145/2523813",
+    "Stephan Rabanser, Stephan Gunnemann, Zachary C. Lipton (2018). Failing Loudly: An Empirical Study of Methods for Detecting Dataset Shift. arXiv:1810.11953 https://arxiv.org/abs/1810.11953",
+    "Yogesh L. Simmhan, Beth Plale, Dennis Gannon (2005). A Survey of Data Provenance in e-Science. ACM SIGMOD Record. https://doi.org/10.1145/1084805.1084812",
+    "Mohammad Hossein Namaki, Avrilia Floratou, Fotis Psallidas, Subru Krishnan, Ashvin Agrawal, Yinghui Wu, Yiwen Zhu, Markus Weimer (2020). Vamsa: Automated Provenance Tracking in Data Science Scripts. Proc. 26th ACM SIGKDD Int. Conf. Knowledge Discovery and Data Mining. https://doi.org/10.1145/3394486.3403205",
+    "Marius Schlegel, Kai-Uwe Sattler (2022). Management of Machine Learning Lifecycle Artifacts: A Survey. arXiv:2210.11831 https://arxiv.org/abs/2210.11831",
+    "Odd Erik Gundersen, Sigbjorn Kjensmo (2018). State of the Art: Reproducibility in Artificial Intelligence. Proc. AAAI Conf. Artificial Intelligence. https://doi.org/10.1609/aaai.v32i1.11503",
+    "Joelle Pineau, Philippe Vincent-Lamarre, Koustuv Sinha, Vincent Lariviere, Alina Beygelzimer, Florence d'Alche-Buc, Emily Fox, Hugo Larochelle (2020). Improving Reproducibility in Machine Learning Research (A Report from the NeurIPS 2019 Reproducibility Program). arXiv:2003.12206 https://arxiv.org/abs/2003.12206",
+    "Hung Viet Pham, Shangshu Qian, Jiannan Wang, Thibaud Lutellier, Jonathan Rosenthal, Lin Tan, Yaoliang Yu, Nachiappan Nagappan (2020). Problems and Opportunities in Training Deep Learning Software Systems: An Analysis of Variance. Proc. 35th IEEE/ACM Int. Conf. Automated Software Engineering (ASE). https://doi.org/10.1145/3324884.3416545",
+    "Joaquin Vanschoren, Jan N. van Rijn, Bernd Bischl, Luis Torgo (2014). OpenML: Networked Science in Machine Learning. ACM SIGKDD Explorations Newsletter. https://doi.org/10.1145/2641190.2641198",
+    "Barry Becker, Ronny Kohavi (1996). Adult. UCI Machine Learning Repository. https://archive.ics.uci.edu/dataset/2/adult",
+    "Sergio Moro, Paulo Cortez, Paulo Rita (2014). A Data-Driven Approach to Predict the Success of Bank Telemarketing. Decision Support Systems. https://doi.org/10.1016/j.dss.2014.03.001",
+    "Hans Hofmann (1994). Statlog (German Credit Data). UCI Machine Learning Repository. https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data",
+    "Fabian Pedregosa, Gael Varoquaux, Alexandre Gramfort, Vincent Michel, Bertrand Thirion, Olivier Grisel et al. (2012). Scikit-learn: Machine Learning in Python. arXiv:1201.0490 https://arxiv.org/abs/1201.0490"
+  ],
+  "notes": "Reproduction: create a Python 3.12 environment with numpy, scipy, pandas, scikit-learn, matplotlib, threadpoolctl, and pytest; then run 'python code/run_all.py' (downloads or reuses data/raw, writes results/, regenerates paper/figures and the tables in paper/main.tex) and 'python -m pytest tests'. Build the PDF in paper/ with pdflatex and bibtex.",
+  "related_identifiers": [
+    {
+      "relation": "isSupplementedBy",
+      "identifier": "https://github.com/bhavinkotak/unified-ml-pipelines",
+      "resource_type": "software",
+      "scheme": "url"
+    }
+  ]
+}

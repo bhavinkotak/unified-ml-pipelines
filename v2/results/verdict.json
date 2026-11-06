@@ -1,0 +1,30 @@
+{
+ "datasets_refuting": 0,
+ "datasets_supporting": 3,
+ "min_effect": 0.005,
+ "per_dataset": {
+  "adult": {
+   "ci_high": 0.10851727441383878,
+   "ci_low": 0.06271338236327141,
+   "mean": 0.0856153283885551,
+   "refutes": false,
+   "supports": true
+  },
+  "bank-marketing": {
+   "ci_high": 0.27383889692068364,
+   "ci_low": 0.17113787130039104,
+   "mean": 0.22248838411053734,
+   "refutes": false,
+   "supports": true
+  },
+  "credit-g": {
+   "ci_high": 0.2048670883962202,
+   "ci_low": 0.07235900199702879,
+   "mean": 0.13861304519662448,
+   "refutes": false,
+   "supports": true
+  }
+ },
+ "primary_endpoint": "delta_auc_online = AUC_online(single) - AUC_online(dual_all)",
+ "verdict": "SUPPORTED"
+}

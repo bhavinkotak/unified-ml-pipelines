@@ -1,0 +1,57 @@
+{
+ "data_order": {
+  "identical_pred_rate": 1.0,
+  "max_abs_pred_diff": 0.0,
+  "n_identical_flagged_resolved": 15,
+  "n_identical_model": 15,
+  "n_identical_pred": 15,
+  "n_nonidentical": 0,
+  "n_nonidentical_explained_explicit": 0,
+  "n_nonidentical_explained_resolved": 0,
+  "n_reruns": 15
+ },
+ "implicit_default": {
+  "identical_pred_rate": 0.4,
+  "max_abs_pred_diff": 0.43773021887730834,
+  "n_identical_flagged_resolved": 0,
+  "n_identical_model": 6,
+  "n_identical_pred": 6,
+  "n_nonidentical": 9,
+  "n_nonidentical_explained_explicit": 0,
+  "n_nonidentical_explained_resolved": 9,
+  "n_reruns": 15
+ },
+ "pinned": {
+  "identical_pred_rate": 1.0,
+  "max_abs_pred_diff": 0.0,
+  "n_identical_flagged_resolved": 0,
+  "n_identical_model": 15,
+  "n_identical_pred": 15,
+  "n_nonidentical": 0,
+  "n_nonidentical_explained_explicit": 0,
+  "n_nonidentical_explained_resolved": 0,
+  "n_reruns": 15
+ },
+ "pinned_threads": {
+  "identical_pred_rate": 1.0,
+  "max_abs_pred_diff": 0.0,
+  "n_identical_flagged_resolved": 0,
+  "n_identical_model": 15,
+  "n_identical_pred": 15,
+  "n_nonidentical": 0,
+  "n_nonidentical_explained_explicit": 0,
+  "n_nonidentical_explained_resolved": 0,
+  "n_reruns": 15
+ },
+ "unpinned_seed": {
+  "identical_pred_rate": 0.0,
+  "max_abs_pred_diff": 0.465105594289142,
+  "n_identical_flagged_resolved": 0,
+  "n_identical_model": 0,
+  "n_identical_pred": 0,
+  "n_nonidentical": 15,
+  "n_nonidentical_explained_explicit": 0,
+  "n_nonidentical_explained_resolved": 15,
+  "n_reruns": 15
+ }
+}

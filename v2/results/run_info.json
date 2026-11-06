@@ -1,0 +1,19 @@
+{
+ "cpu_count": 8,
+ "machine": "arm64",
+ "numpy": "2.5.4",
+ "pandas": "3.1.1",
+ "python": "3.12.12",
+ "quick": false,
+ "runtime_s": 359.3,
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4
+ ],
+ "sklearn": "1.9.1",
+ "threads_per_worker": 1,
+ "workers": 4
+}

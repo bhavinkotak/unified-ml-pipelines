@@ -1,0 +1,26 @@
+{
+  "adult": {
+    "file": "adult.csv.gz",
+    "openml_id": 1590,
+    "url": "https://www.openml.org/d/1590",
+    "license": "CC BY 4.0 (UCI Machine Learning Repository); OpenML licence field: Public",
+    "retrieved_utc": "2026-11-05",
+    "sha256": "ac42c3f748a6b621dabab83d2089f606695ef91bf81bd15a9e7df347d6cced09"
+  },
+  "bank-marketing": {
+    "file": "bank-marketing.csv.gz",
+    "openml_id": 1461,
+    "url": "https://www.openml.org/d/1461",
+    "license": "CC BY 4.0 (UCI Machine Learning Repository); OpenML licence field: Public",
+    "retrieved_utc": "2026-11-05",
+    "sha256": "fa7691e699c46c8cd6111b83e097084247e6e472e3b4cabbc019c2d40f4a5294"
+  },
+  "credit-g": {
+    "file": "credit-g.csv.gz",
+    "openml_id": 31,
+    "url": "https://www.openml.org/d/31",
+    "license": "CC BY 4.0 (UCI Machine Learning Repository); OpenML licence field: Public",
+    "retrieved_utc": "2026-11-05",
+    "sha256": "4ff6ec7c5f1fa979c45f19570df0f6cbe783d2b2bd9d424a40f31f1a8ed48c5d"
+  }
+}

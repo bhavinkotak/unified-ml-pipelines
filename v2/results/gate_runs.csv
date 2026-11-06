@@ -1,0 +1,166 @@
+dataset,seed,candidate,kind,auc_gate_offline,skew_rate_gate,n_gate_requests,auc_post_online,harmful,promote_auc_only,promote_auc_skew,block_reason
+adult,0,seed_change,benign,0.9246100684127561,0.0,7326,0.9219698166637295,False,True,True,promote
+adult,0,learning_rate_0.09,benign,0.9246639106351643,0.0,7326,0.922090187427965,False,True,True,promote
+adult,0,row_shuffle,benign,0.9236246521999518,0.0,7326,0.9220205577263142,False,True,True,promote
+adult,0,label_noise,injected,0.8662660149548844,0.0,7326,0.8394546703046287,True,False,False,auc: failed
+adult,0,dropped_column,injected,0.8989257234116751,0.0,7326,0.8979893980550272,True,False,False,auc: failed
+adult,0,underfit,injected,0.9073888924323514,0.0,7326,0.9018818249767564,True,False,False,auc: failed
+adult,0,training_pit_leakage,injected,0.9255629722066449,1.0,7326,0.9224312463665956,False,True,False,skew: failed
+adult,0,serving_encoding_order,injected,0.9236246521999518,1.0,7326,0.8857843494712193,True,True,False,skew: failed
+adult,0,serving_missing_default,injected,0.9236246521999518,0.9994539994539995,7326,0.897689914378255,True,True,False,skew: failed
+adult,0,serving_stale_window,injected,0.9236246521999518,0.9843024843024843,7326,0.9219521433794562,False,True,False,skew: failed
+adult,0,serving_precision,injected,0.9236246521999518,1.0,7326,0.9217486727312871,False,True,False,skew: failed
+adult,1,seed_change,benign,0.9225679911019988,0.0,7326,0.92071814367414,False,True,True,promote
+adult,1,learning_rate_0.09,benign,0.9238806590031483,0.0,7326,0.9224246017249813,False,True,True,promote
+adult,1,row_shuffle,benign,0.923388351560189,0.0,7326,0.9205499383935261,False,True,True,promote
+adult,1,label_noise,injected,0.8972884597462691,0.0,7326,0.8926503579779868,True,False,False,auc: failed
+adult,1,dropped_column,injected,0.9006818863276297,0.0,7326,0.8999125951701349,True,False,False,auc: failed
+adult,1,underfit,injected,0.905785270890651,0.0,7326,0.9022637541354764,True,False,False,auc: failed
+adult,1,training_pit_leakage,injected,0.923636531238224,1.0,7326,0.9240883376984153,False,True,False,skew: failed
+adult,1,serving_encoding_order,injected,0.923388351560189,1.0,7326,0.8741634625108611,True,True,False,skew: failed
+adult,1,serving_missing_default,injected,0.923388351560189,0.9998634998634999,7326,0.8934988143075618,True,True,False,skew: failed
+adult,1,serving_stale_window,injected,0.923388351560189,0.9843024843024843,7326,0.9205776974244985,False,True,False,skew: failed
+adult,1,serving_precision,injected,0.923388351560189,1.0,7326,0.9203246155529001,False,True,False,skew: failed
+adult,2,seed_change,benign,0.9262423116107301,0.0,7326,0.9237485541769531,False,True,True,promote
+adult,2,learning_rate_0.09,benign,0.9259802418595782,0.0,7326,0.9239258989743102,False,True,True,promote
+adult,2,row_shuffle,benign,0.925866880281286,0.0,7326,0.921611818998013,False,True,True,promote
+adult,2,label_noise,injected,0.8966873070580886,0.0,7326,0.8874334168471657,True,False,False,auc: failed
+adult,2,dropped_column,injected,0.9017259136185783,0.0,7326,0.8951792026952339,True,False,False,auc: failed
+adult,2,underfit,injected,0.9091123419805243,0.0,7326,0.9049909078995457,True,False,False,auc: failed
+adult,2,training_pit_leakage,injected,0.926397836626828,1.0,7326,0.9255728247129313,False,True,False,skew: failed
+adult,2,serving_encoding_order,injected,0.925866880281286,1.0,7326,0.8470257150973636,True,True,False,skew: failed
+adult,2,serving_missing_default,injected,0.925866880281286,0.9995904995904996,7326,0.8951610917520729,True,True,False,skew: failed
+adult,2,serving_stale_window,injected,0.925866880281286,0.9843024843024843,7326,0.9216451410984919,False,True,False,skew: failed
+adult,2,serving_precision,injected,0.925866880281286,1.0,7326,0.921792775809315,False,True,False,skew: failed
+adult,3,seed_change,benign,0.9216889636330977,0.0,7326,0.9188645080888029,False,True,True,promote
+adult,3,learning_rate_0.09,benign,0.9232415052747726,0.0,7326,0.9205145463835204,False,True,True,promote
+adult,3,row_shuffle,benign,0.9216606472141053,0.0,7326,0.9193244016386672,False,True,True,promote
+adult,3,label_noise,injected,0.8939678409677739,0.0,7326,0.885067456833032,True,False,False,auc: failed
+adult,3,dropped_column,injected,0.8967623958757662,0.0,7326,0.8921972091258707,True,False,False,auc: failed
+adult,3,underfit,injected,0.9057361948185664,0.0,7326,0.9034740090540746,True,False,False,auc: failed
+adult,3,training_pit_leakage,injected,0.9237405257772633,1.0,7326,0.9212484179845455,False,True,False,skew: failed
+adult,3,serving_encoding_order,injected,0.9216606472141053,1.0,7326,0.8553376003132925,True,True,False,skew: failed
+adult,3,serving_missing_default,injected,0.9216606472141053,1.0,7326,0.8996954779598859,True,True,False,skew: failed
+adult,3,serving_stale_window,injected,0.9216606472141053,0.9845754845754846,7326,0.9192994667294883,False,True,False,skew: failed
+adult,3,serving_precision,injected,0.9216606472141053,1.0,7326,0.9192010018836312,False,True,False,skew: failed
+adult,4,seed_change,benign,0.925227676680254,0.0,7326,0.9153430858730784,False,True,True,promote
+adult,4,learning_rate_0.09,benign,0.9254303691323851,0.0,7326,0.9151941085451358,False,True,True,promote
+adult,4,row_shuffle,benign,0.9244444713872039,0.0,7326,0.913943106449776,False,True,True,promote
+adult,4,label_noise,injected,0.8918958044734928,0.0,7326,0.8767537814775086,True,False,False,auc: failed
+adult,4,dropped_column,injected,0.8955646311204624,0.0,7326,0.8899549553679205,True,False,False,auc: failed
+adult,4,underfit,injected,0.9085852895849241,0.0,7326,0.8959714493227516,True,False,False,auc: failed
+adult,4,training_pit_leakage,injected,0.9263969406289352,1.0,7326,0.9173912822032957,False,True,False,skew: failed
+adult,4,serving_encoding_order,injected,0.9244444713872039,1.0,7326,0.8284378619385082,True,True,False,skew: failed
+adult,4,serving_missing_default,injected,0.9244444713872039,1.0,7326,0.8835794387858525,True,True,False,skew: failed
+adult,4,serving_stale_window,injected,0.9244444713872039,0.9845754845754846,7326,0.9141078218954398,False,True,False,skew: failed
+adult,4,serving_precision,injected,0.9244444713872039,1.0,7326,0.9136288534195517,False,True,False,skew: failed
+bank-marketing,0,seed_change,benign,0.7878347015058386,0.0,6782,0.7950288221767814,False,True,True,promote
+bank-marketing,0,learning_rate_0.09,benign,0.7874744104211968,0.0,6782,0.7907854897041902,False,True,True,promote
+bank-marketing,0,row_shuffle,benign,0.7865366563289861,0.0,6782,0.7944067402675323,False,True,True,promote
+bank-marketing,0,label_noise,injected,0.7215436881585179,0.0,6782,0.7199250414033949,True,False,False,auc: failed
+bank-marketing,0,dropped_column,injected,0.7782907010101731,0.0,6782,0.7870411551118891,True,False,False,auc: failed
+bank-marketing,0,underfit,injected,0.7755327130724978,0.0,6782,0.782891933279997,True,False,False,auc: failed
+bank-marketing,0,training_pit_leakage,injected,0.7936409472302994,1.0,6782,0.7932555239245112,False,True,False,skew: failed
+bank-marketing,0,serving_encoding_order,injected,0.7865366563289861,1.0,6782,0.5552787927275527,True,True,False,skew: failed
+bank-marketing,0,serving_missing_default,injected,0.7865366563289861,1.0,6782,0.7856543449402418,True,True,False,skew: failed
+bank-marketing,0,serving_stale_window,injected,0.7865366563289861,0.9876142730757889,6782,0.7943786128176156,False,True,False,skew: failed
+bank-marketing,0,serving_precision,injected,0.7865366563289861,1.0,6782,0.7898930247519446,False,True,False,skew: failed
+bank-marketing,1,seed_change,benign,0.7834139119823216,0.0,6782,0.7868524940058649,False,True,True,promote
+bank-marketing,1,learning_rate_0.09,benign,0.7841916287074577,0.0,6782,0.7864600253565319,False,True,True,promote
+bank-marketing,1,row_shuffle,benign,0.7824183565423686,0.0,6782,0.7842778738317706,False,True,True,promote
+bank-marketing,1,label_noise,injected,0.7244558096284711,0.0,6782,0.6942840375056216,True,False,False,auc: failed
+bank-marketing,1,dropped_column,injected,0.7735406160825663,0.0,6782,0.7837005810818055,False,False,False,auc: failed
+bank-marketing,1,underfit,injected,0.7704367937175749,0.0,6782,0.7737345038931469,True,False,False,auc: failed
+bank-marketing,1,training_pit_leakage,injected,0.7891978008043776,1.0,6782,0.8025291730364781,False,True,False,skew: failed
+bank-marketing,1,serving_encoding_order,injected,0.7824183565423686,1.0,6782,0.5459780359645956,True,True,False,skew: failed
+bank-marketing,1,serving_missing_default,injected,0.7824183565423686,1.0,6782,0.7782580118610354,True,True,False,skew: failed
+bank-marketing,1,serving_stale_window,injected,0.7824183565423686,0.9876142730757889,6782,0.783033082975795,False,True,False,skew: failed
+bank-marketing,1,serving_precision,injected,0.7824183565423686,1.0,6782,0.7822895884719708,False,True,False,skew: failed
+bank-marketing,2,seed_change,benign,0.7798459410680634,0.0,6782,0.7737159785504297,False,True,True,promote
+bank-marketing,2,learning_rate_0.09,benign,0.7833918123337213,0.0,6782,0.7691279861715793,False,True,True,promote
+bank-marketing,2,row_shuffle,benign,0.7844505398860991,0.0,6782,0.7695660513996535,False,True,True,promote
+bank-marketing,2,label_noise,injected,0.7093719255764327,0.0,6782,0.6718121998741302,True,False,False,auc: failed
+bank-marketing,2,dropped_column,injected,0.7754218022530761,0.0,6782,0.7637790642538774,True,False,False,auc: failed
+bank-marketing,2,underfit,injected,0.7671645933793371,0.0,6782,0.7670385281870459,False,False,False,auc: failed
+bank-marketing,2,training_pit_leakage,injected,0.7930397648542291,1.0,6782,0.7853097816247532,False,True,False,skew: failed
+bank-marketing,2,serving_encoding_order,injected,0.7844505398860991,1.0,6782,0.5425670083539523,True,True,False,skew: failed
+bank-marketing,2,serving_missing_default,injected,0.7844505398860991,1.0,6782,0.7684917408809152,False,True,False,skew: failed
+bank-marketing,2,serving_stale_window,injected,0.7844505398860991,0.9876142730757889,6782,0.7695302733785658,False,True,False,skew: failed
+bank-marketing,2,serving_precision,injected,0.7844505398860991,1.0,6782,0.7425318769236074,True,True,False,skew: failed
+bank-marketing,3,seed_change,benign,0.7841535846087079,0.0,6782,0.7954639197281326,False,True,True,promote
+bank-marketing,3,learning_rate_0.09,benign,0.779420241084006,0.0,6782,0.7909242036573262,False,True,True,promote
+bank-marketing,3,row_shuffle,benign,0.7717259287910608,0.0,6782,0.7910596731149717,False,True,True,promote
+bank-marketing,3,label_noise,injected,0.6906042079408545,0.0,6782,0.6682423849526402,True,False,False,auc: failed
+bank-marketing,3,dropped_column,injected,0.7711249116377564,0.0,6782,0.7837651717576068,True,True,True,promote
+bank-marketing,3,underfit,injected,0.7780948843775553,0.0,6782,0.7879151178574011,False,True,True,promote
+bank-marketing,3,training_pit_leakage,injected,0.7907763668318147,1.0,6782,0.7968578480671518,False,True,False,skew: failed
+bank-marketing,3,serving_encoding_order,injected,0.7717259287910608,1.0,6782,0.5515094111731182,True,True,False,skew: failed
+bank-marketing,3,serving_missing_default,injected,0.7717259287910608,1.0,6782,0.7889427959417089,False,True,False,skew: failed
+bank-marketing,3,serving_stale_window,injected,0.7717259287910608,0.987761722205839,6782,0.7897337362702372,False,True,False,skew: failed
+bank-marketing,3,serving_precision,injected,0.7717259287910608,1.0,6782,0.7818988976750606,True,True,False,skew: failed
+bank-marketing,4,seed_change,benign,0.7705618201882257,0.0,6782,0.793523108360465,False,True,True,promote
+bank-marketing,4,learning_rate_0.09,benign,0.7733915790166845,0.0,6782,0.7930974955758269,False,True,True,promote
+bank-marketing,4,row_shuffle,benign,0.7678382715774024,0.0,6782,0.793004714229379,False,True,True,promote
+bank-marketing,4,label_noise,injected,0.6554901654648979,0.0,6782,0.6636738317086923,True,False,False,auc: failed
+bank-marketing,4,dropped_column,injected,0.7637540638684522,0.0,6782,0.7960240290447371,False,True,True,promote
+bank-marketing,4,underfit,injected,0.7638238439814387,0.0,6782,0.784190078934418,True,True,True,promote
+bank-marketing,4,training_pit_leakage,injected,0.7850287139323376,1.0,6782,0.8061997290092133,False,True,False,skew: failed
+bank-marketing,4,serving_encoding_order,injected,0.7678382715774024,1.0,6782,0.5972086767567145,True,True,False,skew: failed
+bank-marketing,4,serving_missing_default,injected,0.7678382715774024,1.0,6782,0.7885091473648875,False,True,False,skew: failed
+bank-marketing,4,serving_stale_window,injected,0.7678382715774024,0.9876142730757889,6782,0.7935199511467,False,True,False,skew: failed
+bank-marketing,4,serving_precision,injected,0.7678382715774024,1.0,6782,0.7822018490273337,True,True,False,skew: failed
+credit-g,0,seed_change,benign,0.7713893249607535,0.0,150,0.7132823796736212,False,False,False,auc: failed
+credit-g,0,learning_rate_0.09,benign,0.7501962323390894,0.0,150,0.723610824209874,False,False,False,auc: failed
+credit-g,0,row_shuffle,benign,0.7831632653061225,0.0,150,0.7048130551538938,False,True,True,promote
+credit-g,0,label_noise,injected,0.6334379905808477,0.0,150,0.5133236934517662,True,False,False,auc: failed
+credit-g,0,dropped_column,injected,0.7123233908948196,0.0,150,0.6506920057839289,True,False,False,auc: failed
+credit-g,0,underfit,injected,0.7581436420722135,0.0,150,0.7154513530262343,False,False,False,auc: failed
+credit-g,0,training_pit_leakage,injected,0.7725667189952904,1.0,150,0.7298078909316257,False,False,False,auc: failed
+credit-g,0,serving_encoding_order,injected,0.7831632653061225,1.0,150,0.47717413757488125,True,True,False,skew: failed
+credit-g,0,serving_missing_default,injected,0.7831632653061225,0.9666666666666667,150,0.7002685395579427,False,True,False,skew: failed
+credit-g,0,serving_stale_window,injected,0.7831632653061225,0.94,150,0.7170006197066722,False,True,False,skew: failed
+credit-g,0,serving_precision,injected,0.7831632653061225,1.0,150,0.701507952902293,False,True,False,skew: failed
+credit-g,1,seed_change,benign,0.7615735709628342,0.0,150,0.7683946488294313,False,True,True,promote
+credit-g,1,learning_rate_0.09,benign,0.7450554227341881,0.0,150,0.7665133779264214,False,True,True,promote
+credit-g,1,row_shuffle,benign,0.744403390567268,0.0,150,0.7606605351170569,False,True,True,promote
+credit-g,1,label_noise,injected,0.7004998913279722,0.0,150,0.6937709030100335,True,False,False,auc: failed
+credit-g,1,dropped_column,injected,0.6442077809171919,0.0,150,0.7326505016722408,True,False,False,auc: failed
+credit-g,1,underfit,injected,0.7410345577048467,0.0,150,0.767663043478261,False,True,True,promote
+credit-g,1,training_pit_leakage,injected,0.7467941751793088,1.0,150,0.7836538461538461,False,True,False,skew: failed
+credit-g,1,serving_encoding_order,injected,0.744403390567268,1.0,150,0.6206103678929766,True,True,False,skew: failed
+credit-g,1,serving_missing_default,injected,0.744403390567268,0.98,150,0.7307692307692307,True,True,False,skew: failed
+credit-g,1,serving_stale_window,injected,0.744403390567268,0.9333333333333333,150,0.7644230769230769,False,True,False,skew: failed
+credit-g,1,serving_precision,injected,0.744403390567268,1.0,150,0.7635869565217391,False,True,False,skew: failed
+credit-g,2,seed_change,benign,0.8076555023923445,0.0,150,0.8320496894409938,False,True,True,promote
+credit-g,2,learning_rate_0.09,benign,0.8103349282296651,0.0,150,0.8280745341614907,False,True,True,promote
+credit-g,2,row_shuffle,benign,0.7998086124401913,0.0,150,0.8260869565217391,False,True,True,promote
+credit-g,2,label_noise,injected,0.7020095693779904,0.0,150,0.6827329192546584,True,False,False,auc: failed
+credit-g,2,dropped_column,injected,0.7242105263157895,0.0,150,0.786832298136646,True,False,False,auc: failed
+credit-g,2,underfit,injected,0.7443062200956938,0.0,150,0.7617391304347826,True,False,False,auc: failed
+credit-g,2,training_pit_leakage,injected,0.7781818181818181,1.0,150,0.8029813664596273,True,False,False,auc: failed
+credit-g,2,serving_encoding_order,injected,0.7998086124401913,1.0,150,0.7311801242236025,True,True,False,skew: failed
+credit-g,2,serving_missing_default,injected,0.7998086124401913,0.9533333333333334,150,0.8238509316770186,False,True,False,skew: failed
+credit-g,2,serving_stale_window,injected,0.7998086124401913,0.9333333333333333,150,0.8280745341614907,False,True,False,skew: failed
+credit-g,2,serving_precision,injected,0.7998086124401913,0.9933333333333333,150,0.8283229813664597,False,True,False,skew: failed
+credit-g,3,seed_change,benign,0.7587301587301587,0.0,150,0.8185492018589614,False,True,True,promote
+credit-g,3,learning_rate_0.09,benign,0.748994708994709,0.0,150,0.8169327136795311,False,False,False,auc: failed
+credit-g,3,row_shuffle,benign,0.7619047619047619,0.0,150,0.8147100424328146,False,True,True,promote
+credit-g,3,label_noise,injected,0.7098412698412699,0.0,150,0.5960800161648818,True,False,False,auc: failed
+credit-g,3,dropped_column,injected,0.7079365079365079,0.0,150,0.7373206708425945,True,False,False,auc: failed
+credit-g,3,underfit,injected,0.7192592592592593,0.0,150,0.8307738937159022,False,False,False,auc: failed
+credit-g,3,training_pit_leakage,injected,0.7619047619047619,1.0,150,0.8169327136795312,False,True,False,skew: failed
+credit-g,3,serving_encoding_order,injected,0.7619047619047619,1.0,150,0.6377045867852091,True,True,False,skew: failed
+credit-g,3,serving_missing_default,injected,0.7619047619047619,1.0,150,0.8035966861992321,True,True,False,skew: failed
+credit-g,3,serving_stale_window,injected,0.7619047619047619,0.94,150,0.8052131743786624,True,True,False,skew: failed
+credit-g,3,serving_precision,injected,0.7619047619047619,1.0,150,0.8080420286926652,True,True,False,skew: failed
+credit-g,4,seed_change,benign,0.7725667189952905,0.0,150,0.6807598039215687,False,False,False,auc: failed
+credit-g,4,learning_rate_0.09,benign,0.792778649921507,0.0,150,0.6727941176470589,False,True,True,promote
+credit-g,4,row_shuffle,benign,0.7876766091051806,0.0,150,0.6744281045751634,False,True,True,promote
+credit-g,4,label_noise,injected,0.5863422291993721,0.0,150,0.6838235294117647,False,False,False,auc: failed
+credit-g,4,dropped_column,injected,0.6999607535321821,0.0,150,0.6315359477124183,True,False,False,auc: failed
+credit-g,4,underfit,injected,0.8233908948194663,0.0,150,0.7070057189542484,False,True,True,promote
+credit-g,4,training_pit_leakage,injected,0.8263343799058085,1.0,150,0.7408088235294118,False,True,False,skew: failed
+credit-g,4,serving_encoding_order,injected,0.7876766091051806,1.0,150,0.6074346405228758,True,True,False,skew: failed
+credit-g,4,serving_missing_default,injected,0.7876766091051806,0.92,150,0.6638071895424836,True,True,False,skew: failed
+credit-g,4,serving_stale_window,injected,0.7876766091051806,0.9333333333333333,150,0.7189542483660131,False,True,False,skew: failed
+credit-g,4,serving_precision,injected,0.7876766091051806,1.0,150,0.6840277777777778,False,True,False,skew: failed

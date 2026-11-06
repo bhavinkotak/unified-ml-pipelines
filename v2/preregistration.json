@@ -1,0 +1,36 @@
+{
+  "study": "unified-ml-pipelines v2: training-serving skew, reproducibility, and CI gating on public tabular data",
+  "registered_at_utc": "2026-11-05T03:46:59Z",
+  "registered_before": "any full experiment run; only unit tests and small smoke runs on subsets are executed while developing the code",
+  "hypothesis": "Serving features produced by a single shared feature definition (feature-store pattern with point-in-time correct aggregates) yield a higher online ROC AUC than a dual implementation (batch pandas for training, separate per-request Python for serving) that contains five documented divergence sources.",
+  "baseline": "Dual implementation with all five divergence sources enabled: missing_default, precision, encoding_order, stale_window, pit_leakage.",
+  "treatment": "Single feature definition used for offline backfill and online serving.",
+  "datasets": ["adult (OpenML 1590)", "bank-marketing (OpenML 1461)", "credit-g (OpenML 31)"],
+  "seeds": [0, 1, 2, 3, 4],
+  "split": "random arrival order per seed; first 70% of arrivals train, last 30% are replayed as serving requests",
+  "primary_endpoint": {
+    "name": "delta_auc_online",
+    "definition": "AUC_online(single) - AUC_online(dual, all sources), paired by dataset and seed, on the 30% held-out serving requests",
+    "summary": "per dataset: mean over 5 seeds with a two-sided 95% t confidence interval (df = 4)"
+  },
+  "decision_rule": {
+    "min_effect": 0.005,
+    "SUPPORTED": "in at least 2 of 3 datasets the mean delta_auc_online >= 0.005 and the 95% CI lower bound > 0",
+    "REFUTED": "in at least 2 of 3 datasets the 95% CI upper bound < 0.005",
+    "INCONCLUSIVE": "any other outcome"
+  },
+  "falsification_rule": "The hypothesis is refuted if, in at least 2 of 3 datasets, the 95% CI of delta_auc_online lies entirely below the minimum meaningful effect of 0.005 AUC.",
+  "secondary_endpoints": [
+    "request-level skew rate (requests with any feature mismatch / requests), for each path and each single divergence source (ablation)",
+    "prediction disagreement rate at threshold 0.5 between offline and online feature vectors under the same model",
+    "offline-online AUC gap of each path",
+    "breakpoints: online-store timeout rates for the single path, 4x higher missingness, covariate-shifted arrival order",
+    "reproducibility: bit-identical model rate over reruns under pinned vs unpinned regimes, and the fraction of non-identical reruns whose lineage hash also changed (explicit vs resolved lineage)",
+    "simulated CI gate: injected regressions caught by an AUC-only gate vs an AUC+skew gate, and false blocks on benign changes"
+  ],
+  "expectations_stated_in_advance": [
+    "single-path skew rate is 0 without timeouts (by construction; a sanity check, not evidence for the hypothesis)",
+    "skew rate is expected to be a poor proxy for harm: precision rounding may produce many mismatches with little prediction change"
+  ],
+  "analysis_constraints": "No result-dependent changes to datasets, seeds, divergence parameters, or thresholds after the first full run. Any deviation is reported in REVIEW.md and the paper."
+}

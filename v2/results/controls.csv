@@ -1,0 +1,16 @@
+dataset,seed,max_abs_diff_train,max_abs_diff_serve,n_mismatched_requests
+adult,0,0.0,0.0,0
+adult,1,0.0,0.0,0
+adult,2,0.0,0.0,0
+adult,3,0.0,0.0,0
+adult,4,0.0,0.0,0
+bank-marketing,0,0.0,0.0,0
+bank-marketing,1,0.0,0.0,0
+bank-marketing,2,0.0,0.0,0
+bank-marketing,3,0.0,0.0,0
+bank-marketing,4,0.0,0.0,0
+credit-g,0,0.0,0.0,0
+credit-g,1,0.0,0.0,0
+credit-g,2,0.0,0.0,0
+credit-g,3,0.0,0.0,0
+credit-g,4,0.0,0.0,0

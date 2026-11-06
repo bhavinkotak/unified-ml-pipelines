@@ -1,0 +1,122 @@
+{
+ "auc_only": {
+  "benign_blocked": 4,
+  "harmful_blocked": 35,
+  "harmful_promoted": 32,
+  "harmless_blocked": 10,
+  "harmless_blocked_rate": 0.10204081632653061,
+  "harmless_promoted": 88,
+  "injected_blocked": 41,
+  "n_benign": 45,
+  "n_harmful": 67,
+  "n_harmless": 98,
+  "n_injected": 120,
+  "n_total": 165,
+  "recall_harmful": 0.5223880597014925
+ },
+ "auc_skew": {
+  "benign_blocked": 4,
+  "harmful_blocked": 65,
+  "harmful_promoted": 2,
+  "harmless_blocked": 53,
+  "harmless_blocked_rate": 0.5408163265306123,
+  "harmless_promoted": 45,
+  "injected_blocked": 114,
+  "n_benign": 45,
+  "n_harmful": 67,
+  "n_harmless": 98,
+  "n_injected": 120,
+  "n_total": 165,
+  "recall_harmful": 0.9701492537313433
+ },
+ "per_candidate": {
+  "dropped_column": {
+   "kind": "injected",
+   "mean_skew_rate_gate": 0.0,
+   "n": 15,
+   "n_blocked_auc_only": 13,
+   "n_blocked_auc_skew": 13,
+   "n_harmful": 13
+  },
+  "label_noise": {
+   "kind": "injected",
+   "mean_skew_rate_gate": 0.0,
+   "n": 15,
+   "n_blocked_auc_only": 15,
+   "n_blocked_auc_skew": 15,
+   "n_harmful": 14
+  },
+  "learning_rate_0.09": {
+   "kind": "benign",
+   "mean_skew_rate_gate": 0.0,
+   "n": 15,
+   "n_blocked_auc_only": 2,
+   "n_blocked_auc_skew": 2,
+   "n_harmful": 0
+  },
+  "row_shuffle": {
+   "kind": "benign",
+   "mean_skew_rate_gate": 0.0,
+   "n": 15,
+   "n_blocked_auc_only": 0,
+   "n_blocked_auc_skew": 0,
+   "n_harmful": 0
+  },
+  "seed_change": {
+   "kind": "benign",
+   "mean_skew_rate_gate": 0.0,
+   "n": 15,
+   "n_blocked_auc_only": 2,
+   "n_blocked_auc_skew": 2,
+   "n_harmful": 0
+  },
+  "serving_encoding_order": {
+   "kind": "injected",
+   "mean_skew_rate_gate": 1.0,
+   "n": 15,
+   "n_blocked_auc_only": 0,
+   "n_blocked_auc_skew": 15,
+   "n_harmful": 15
+  },
+  "serving_missing_default": {
+   "kind": "injected",
+   "mean_skew_rate_gate": 0.9879271999271999,
+   "n": 15,
+   "n_blocked_auc_only": 0,
+   "n_blocked_auc_skew": 15,
+   "n_harmful": 10
+  },
+  "serving_precision": {
+   "kind": "injected",
+   "mean_skew_rate_gate": 0.9995555555555556,
+   "n": 15,
+   "n_blocked_auc_only": 0,
+   "n_blocked_auc_skew": 15,
+   "n_harmful": 4
+  },
+  "serving_stale_window": {
+   "kind": "injected",
+   "mean_skew_rate_gate": 0.969351815771161,
+   "n": 15,
+   "n_blocked_auc_only": 0,
+   "n_blocked_auc_skew": 15,
+   "n_harmful": 1
+  },
+  "training_pit_leakage": {
+   "kind": "injected",
+   "mean_skew_rate_gate": 1.0,
+   "n": 15,
+   "n_blocked_auc_only": 2,
+   "n_blocked_auc_skew": 15,
+   "n_harmful": 1
+  },
+  "underfit": {
+   "kind": "injected",
+   "mean_skew_rate_gate": 0.0,
+   "n": 15,
+   "n_blocked_auc_only": 11,
+   "n_blocked_auc_skew": 11,
+   "n_harmful": 9
+  }
+ }
+}

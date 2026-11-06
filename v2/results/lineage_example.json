@@ -1,0 +1,45 @@
+{
+ "explicit": {
+  "code": "06ea4d6ee5d0df3bc87a8bbc2d1b104eb9b2ff9cebbbb01b1b30f2d7229d4f4f",
+  "data": "80f1551533f4c1b71f001db12bf1627a779957ee5ab01859453788627059398e",
+  "params": {
+   "max_iter": 150,
+   "random_state": 12345
+  }
+ },
+ "explicit_hash": "28dfe1373eed847ec2f2eba811a8c8a484963f2b7701e78775d4dd8e5517ae70",
+ "resolved": {
+  "code": "06ea4d6ee5d0df3bc87a8bbc2d1b104eb9b2ff9cebbbb01b1b30f2d7229d4f4f",
+  "data": "250ceea1ed4b027e2b7fdf864d1c24e855e9e3dc36b341c87827ef78adb750f3",
+  "env": {
+   "library_build": "A",
+   "numpy": "2.5.4",
+   "python": "3.12.12",
+   "sklearn": "1.9.1"
+  },
+  "params": {
+   "categorical_features": "from_dtype",
+   "class_weight": null,
+   "early_stopping": false,
+   "interaction_cst": null,
+   "l2_regularization": 0.0,
+   "learning_rate": 0.1,
+   "loss": "log_loss",
+   "max_bins": 255,
+   "max_depth": null,
+   "max_features": 0.8,
+   "max_iter": 150,
+   "max_leaf_nodes": 31,
+   "min_samples_leaf": 20,
+   "monotonic_cst": null,
+   "n_iter_no_change": 10,
+   "random_state": 0,
+   "scoring": "loss",
+   "tol": 1e-07,
+   "validation_fraction": 0.1,
+   "verbose": 0,
+   "warm_start": false
+  }
+ },
+ "resolved_hash": "179807cf1cd6c5e9e986576c66ecc1608b5225163390096177727b86810f294c"
+}

@@ -1,0 +1,44 @@
+{
+ "adult": {
+  "group_key": "occupation",
+  "n_categorical": 8,
+  "n_groups": 14,
+  "n_missing_cells_raw": 6465,
+  "n_model_features": 18,
+  "n_numeric": 6,
+  "n_rows": 48842,
+  "n_serving_requests": 14653,
+  "n_train": 34189,
+  "openml_id": 1590,
+  "positive_rate": 0.23928176569346055,
+  "sha256": "ac42c3f748a6b621dabab83d2089f606695ef91bf81bd15a9e7df347d6cced09"
+ },
+ "bank-marketing": {
+  "group_key": "V2",
+  "n_categorical": 9,
+  "n_groups": 12,
+  "n_missing_cells_raw": 0,
+  "n_model_features": 19,
+  "n_numeric": 6,
+  "n_rows": 45211,
+  "n_serving_requests": 13564,
+  "n_train": 31647,
+  "openml_id": 1461,
+  "positive_rate": 0.11698480458295547,
+  "sha256": "fa7691e699c46c8cd6111b83e097084247e6e472e3b4cabbc019c2d40f4a5294"
+ },
+ "credit-g": {
+  "group_key": "purpose",
+  "n_categorical": 13,
+  "n_groups": 10,
+  "n_missing_cells_raw": 0,
+  "n_model_features": 24,
+  "n_numeric": 7,
+  "n_rows": 1000,
+  "n_serving_requests": 300,
+  "n_train": 700,
+  "openml_id": 31,
+  "positive_rate": 0.3,
+  "sha256": "4ff6ec7c5f1fa979c45f19570df0f6cbe783d2b2bd9d424a40f31f1a8ed48c5d"
+ }
+}
