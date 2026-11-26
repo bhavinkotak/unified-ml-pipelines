@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1080 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="unified-mlops-architecture-title unified-mlops-architecture-desc" id="unified-mlops-architecture-root">
+        <title id="unified-mlops-architecture-title">Unified MLOps pipeline architecture</title>
+        <desc id="unified-mlops-architecture-desc">Unified DevOps and MLOps architecture sharing one point-in-time feature definition across training and serving, backed by content-hash lineage and a fail-closed release gate.</desc>
+        <defs>
+      <style>@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500;600&amp;family=Noto+Serif:ital@0;1&amp;family=Noto+Sans+KR:wght@400;500;600&amp;family=Noto+Serif+KR:wght@400&amp;family=Noto+Sans+TC:wght@400;500;600&amp;family=Noto+Serif+TC:wght@400&amp;display=swap');
+      #unified-mlops-architecture-root { --color-paper:   #f5f5f5;
+      --color-ink:     #2d3142;
+      --color-muted:   #4f5d75;
+      --color-soft:    #5a6580;
+      --color-accent:  #bf4520;
+      --color-link:    #2e5aa8;
+      --font-sans:     'Geist', system-ui, sans-serif;
+      --font-serif:    'Instrument Serif', serif;
+      --font-mono:     'Geist Mono', ui-monospace, monospace; }
+      #unified-mlops-architecture-root { font-family: var(--font-sans); color: var(--color-ink); }
+      #unified-mlops-architecture-root .diagram-container { width: 100%; overflow-x: auto; }
+      @media print {
+#unified-mlops-architecture-root .diagram-container { overflow-x: visible; }
+}</style>
+          <pattern id="unified-mlops-architecture-dots" width="22" height="22" patternUnits="userSpaceOnUse">
+            <circle cx="1" cy="1" r="0.9" fill="#2d3142" fill-opacity="0.10"/>
+          </pattern>
+          <marker id="unified-mlops-architecture-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#4f5d75"/></marker>
+          <marker id="unified-mlops-architecture-arrow-accent" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#bf4520"/></marker>
+          <marker id="unified-mlops-architecture-arrow-link" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2e5aa8"/></marker>
+        </defs>
+
+        <rect width="100%" height="100%" fill="#f5f5f5"/>
+        <rect width="100%" height="100%" fill="url(#unified-mlops-architecture-dots)" opacity="0.55"/>
+
+        <!-- Zone: Release Governance & Lineage -->
+        <rect x="536" y="44" width="224" height="244" rx="8"
+              fill="#2d3142" stroke="#2d3142" stroke-width="0.8" fill-opacity="0.02" stroke-opacity="0.10"/>
+        <rect x="576" y="48" width="144" height="12" rx="2" fill="#f5f5f5"/>
+        <text x="648" y="57" fill="#5a6580" font-size="7" font-family="'Geist Mono', monospace"
+              text-anchor="middle" letter-spacing="0.14em">RELEASE GOVERNANCE</text>
+
+        <!-- Orthogonal connectors (drawn before labels and nodes) -->
+        <!-- 1. Event Arrivals -> Shared Feature Store -->
+        <line x1="188" y1="220" x2="260" y2="220" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#unified-mlops-architecture-arrow-link)"/>
+
+        <!-- 2. Shared Feature Store (port y=200) -> Training & Lineage (port y=116) -->
+        <path d="M 444,200 H 464 Q 472,200 472,192 V 124 Q 472,116 480,116 H 556"
+              fill="none" stroke="#bf4520" stroke-width="1.4" marker-end="url(#unified-mlops-architecture-arrow-accent)"/>
+
+        <!-- 3. Shared Feature Store (port y=220) -> Fail-Closed CI Gate (validation replay) -->
+        <line x1="444" y1="220" x2="556" y2="220" stroke="#4f5d75" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#unified-mlops-architecture-arrow)"/>
+
+        <!-- 4. Shared Feature Store (port y=240) -> Online Serving (port y=324) -->
+        <path d="M 444,240 H 464 Q 472,240 472,248 V 316 Q 472,324 480,324 H 856"
+              fill="none" stroke="#bf4520" stroke-width="1.4" marker-end="url(#unified-mlops-architecture-arrow-accent)"/>
+
+        <!-- 5. Training & Lineage -> Fail-Closed CI Gate -->
+        <line x1="648" y1="148" x2="648" y2="204" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#unified-mlops-architecture-arrow)"/>
+
+        <!-- 6. Training & Lineage -> Model Registry (port y=104) -->
+        <line x1="740" y1="104" x2="856" y2="104" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#unified-mlops-architecture-arrow)"/>
+
+        <!-- 7. Fail-Closed CI Gate -> Model Registry (port y=132) -->
+        <path d="M 740,236 H 816 Q 824,236 824,228 V 140 Q 824,132 832,132 H 856"
+              fill="none" stroke="#bf4520" stroke-width="1.4" marker-end="url(#unified-mlops-architecture-arrow-accent)"/>
+
+        <!-- 8. Model Registry -> Online Serving -->
+        <line x1="948" y1="148" x2="948" y2="292" stroke="#4f5d75" stroke-width="1.2" marker-end="url(#unified-mlops-architecture-arrow)"/>
+
+        <!-- Arrow label masks -->
+        <rect x="200" y="200" width="48" height="12" rx="2" fill="#f5f5f5"/>
+        <text x="224" y="209" fill="#2e5aa8" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">ARRIVE</text>
+
+        <rect x="408" y="148" width="56" height="12" rx="2" fill="#f5f5f5"/>
+        <text x="436" y="157" fill="#bf4520" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">BACKFILL</text>
+
+        <rect x="480" y="200" width="48" height="12" rx="2" fill="#f5f5f5"/>
+        <text x="504" y="209" fill="#5a6580" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">REPLAY</text>
+
+        <rect x="616" y="304" width="68" height="12" rx="2" fill="#f5f5f5"/>
+        <text x="650" y="313" fill="#bf4520" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">SERVE FEAT</text>
+
+        <rect x="656" y="170" width="52" height="12" rx="2" fill="#f5f5f5"/>
+        <text x="682" y="179" fill="#5a6580" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">SHA-256</text>
+
+        <rect x="772" y="84" width="56" height="12" rx="2" fill="#f5f5f5"/>
+        <text x="800" y="93" fill="#5a6580" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">REGISTER</text>
+
+        <rect x="764" y="178" width="52" height="12" rx="2" fill="#f5f5f5"/>
+        <text x="790" y="187" fill="#bf4520" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">PROMOTE</text>
+
+        <rect x="956" y="214" width="64" height="12" rx="2" fill="#f5f5f5"/>
+        <text x="988" y="223" fill="#5a6580" font-size="8" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.06em">LOAD HASH</text>
+
+        <!-- Node 1: Event Arrivals (input) -->
+        <rect x="40" y="188" width="148" height="64" rx="6" fill="#f5f5f5"/>
+        <rect x="40" y="188" width="148" height="64" rx="6" fill="#4f5d75" stroke="#5a6580" stroke-width="1" fill-opacity="0.10"/>
+        <rect x="48" y="196" width="32" height="12" rx="2" fill="none" stroke="#5a6580" stroke-width="0.8" stroke-opacity="0.45"/>
+        <text x="64" y="205" fill="#5a6580" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">DATA</text>
+        <text x="114" y="224" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Event Arrivals</text>
+        <text x="114" y="240" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">70% train · 30% serve</text>
+
+        <!-- Node 2: Shared Feature Store (focal coral #1, h=72 for 3 fanned ports) -->
+        <rect x="260" y="184" width="184" height="72" rx="6" fill="#f5f5f5"/>
+        <rect x="260" y="184" width="184" height="72" rx="6" fill="#bf4520" stroke="#bf4520" stroke-width="1" fill-opacity="0.08"/>
+        <rect x="268" y="192" width="36" height="12" rx="2" fill="none" stroke="#bf4520" stroke-width="0.8" stroke-opacity="0.50"/>
+        <text x="286" y="201" fill="#bf4520" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">FEAT</text>
+        <text x="352" y="224" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Shared Feature Store</text>
+        <text x="352" y="240" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">point-in-time · 1 def</text>
+
+        <!-- Node 3: Training & Lineage (backend) -->
+        <rect x="556" y="84" width="184" height="64" rx="6" fill="#f5f5f5"/>
+        <rect x="556" y="84" width="184" height="64" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <rect x="564" y="92" width="40" height="12" rx="2" fill="none" stroke="#2d3142" stroke-width="0.8" stroke-opacity="0.40"/>
+        <text x="584" y="101" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">TRAIN</text>
+        <text x="648" y="120" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Training &amp; Lineage</text>
+        <text x="648" y="136" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">HGB · data/code/env hash</text>
+
+        <!-- Node 4: Fail-Closed CI Gate (focal coral #2) -->
+        <rect x="556" y="204" width="184" height="64" rx="6" fill="#f5f5f5"/>
+        <rect x="556" y="204" width="184" height="64" rx="6" fill="#bf4520" stroke="#bf4520" stroke-width="1" fill-opacity="0.08"/>
+        <rect x="564" y="212" width="36" height="12" rx="2" fill="none" stroke="#bf4520" stroke-width="0.8" stroke-opacity="0.50"/>
+        <text x="582" y="221" fill="#bf4520" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">GATE</text>
+        <text x="648" y="240" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Fail-Closed CI Gate</text>
+        <text x="648" y="256" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">AUC margin · skew &lt;=1%</text>
+
+        <!-- Node 5: Model Registry (store) -->
+        <rect x="856" y="84" width="184" height="64" rx="6" fill="#f5f5f5"/>
+        <rect x="856" y="84" width="184" height="64" rx="6" fill="#2d3142" stroke="#4f5d75" stroke-width="1" fill-opacity="0.05"/>
+        <rect x="864" y="92" width="32" height="12" rx="2" fill="none" stroke="#4f5d75" stroke-width="0.8" stroke-opacity="0.45"/>
+        <text x="880" y="101" fill="#4f5d75" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">REG</text>
+        <text x="948" y="120" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Model Registry</text>
+        <text x="948" y="136" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">stages · tree-hash verify</text>
+
+        <!-- Node 6: Online Serving (backend) -->
+        <rect x="856" y="292" width="184" height="64" rx="6" fill="#f5f5f5"/>
+        <rect x="856" y="292" width="184" height="64" rx="6" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <rect x="864" y="300" width="40" height="12" rx="2" fill="none" stroke="#2d3142" stroke-width="0.8" stroke-opacity="0.40"/>
+        <text x="884" y="309" fill="#2d3142" font-size="7" font-family="'Geist Mono', monospace" text-anchor="middle" letter-spacing="0.08em">SERVE</text>
+        <text x="948" y="328" fill="#2d3142" font-size="12" font-weight="600" font-family="'Geist', sans-serif" text-anchor="middle">Online Serving</text>
+        <text x="948" y="344" fill="#4f5d75" font-size="9" font-family="'Geist Mono', monospace" text-anchor="middle">0% skew · +0.09..0.22 AUC</text>
+
+        <!-- Bottom horizontal legend strip -->
+        <line x1="40" y1="428" x2="1040" y2="428" stroke="#2d3142" stroke-width="0.8" stroke-opacity="0.10"/>
+        <text x="40" y="444" fill="#4f5d75" font-size="8" font-family="'Geist Mono', monospace" letter-spacing="0.18em">LEGEND</text>
+
+        <rect x="40" y="460" width="14" height="10" rx="2" fill="#bf4520" stroke="#bf4520" stroke-width="1" fill-opacity="0.08"/>
+        <text x="60" y="468" fill="#4f5d75" font-size="8.5" font-family="'Geist', sans-serif">Focal feature / CI gate</text>
+
+        <rect x="208" y="460" width="14" height="10" rx="2" fill="#ffffff" stroke="#2d3142" stroke-width="1"/>
+        <text x="228" y="468" fill="#4f5d75" font-size="8.5" font-family="'Geist', sans-serif">Pipeline stage</text>
+
+        <rect x="336" y="460" width="14" height="10" rx="2" fill="#2d3142" stroke="#4f5d75" stroke-width="1" fill-opacity="0.05"/>
+        <text x="356" y="468" fill="#4f5d75" font-size="8.5" font-family="'Geist', sans-serif">Artifact registry</text>
+
+        <rect x="476" y="460" width="14" height="10" rx="2" fill="#4f5d75" stroke="#5a6580" stroke-width="1" fill-opacity="0.10"/>
+        <text x="496" y="468" fill="#4f5d75" font-size="8.5" font-family="'Geist', sans-serif">Arrival split</text>
+
+        <line x1="600" y1="466" x2="628" y2="466" stroke="#bf4520" stroke-width="1.4" marker-end="url(#unified-mlops-architecture-arrow-accent)"/>
+        <text x="636" y="468" fill="#4f5d75" font-size="8.5" font-family="'Geist', sans-serif">Parity &amp; promotion</text>
+
+        <line x1="776" y1="466" x2="804" y2="466" stroke="#2e5aa8" stroke-width="1.2" marker-end="url(#unified-mlops-architecture-arrow-link)"/>
+        <text x="812" y="468" fill="#4f5d75" font-size="8.5" font-family="'Geist', sans-serif">Data ingress</text>
+
+        <line x1="912" y1="466" x2="940" y2="466" stroke="#4f5d75" stroke-width="1" stroke-dasharray="5,4" marker-end="url(#unified-mlops-architecture-arrow)"/>
+        <text x="948" y="468" fill="#4f5d75" font-size="8.5" font-family="'Geist', sans-serif">Gate replay</text>
+      </svg>

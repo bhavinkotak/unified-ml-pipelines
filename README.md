@@ -1,252 +1,135 @@
-# Unified ML Pipelines Code Project
+# Unified ML Pipelines
+
+Companion repository for two studies by Bhavin Kotak (`kotak.bhavin@gmail.com` | `bhavin.kotak@ibm.com`) on feature-store parity, content-hash artifact lineage, and fail-closed release gating across training and serving.
+
+![Unified MLOps pipeline architecture](./docs/diagrams/unified-mlops-architecture.svg)
+
+Interactive HTML version: [`docs/diagrams/unified-mlops-architecture.html`](./docs/diagrams/unified-mlops-architecture.html)
 
 <!-- v2-release -->
-## Version 2.0 (November 2026)
+## Version 2.0 study (November 2026)
 
-The v2 release is a preregistered, reproducible rewrite of the paper:
-**Unified ML Pipelines: A Reproducible Study of Training-Serving Skew, Lineage, and Release Gating**
+Version 2.0 is a preregistered benchmark on public tabular datasets: *Unified ML Pipelines: A Reproducible Study of Training-Serving Skew, Lineage, and Release Gating* ([`v2/paper/main.pdf`](v2/paper/main.pdf)).
 
-- Paper, code, data sources, results and tests: [`v2/`](v2/)
-- Archived on Zenodo: [10.5281/zenodo.23970091](https://doi.org/10.5281/zenodo.23970091) (v1: [10.5281/zenodo.18445586](https://doi.org/10.5281/zenodo.18445586))
-- Preregistered verdict: SUPPORTED
-- Reproduce: `python v2/code/run_all.py`
+- Code, preregistration, logged runs, and tests: [`v2/`](v2/)
+- Zenodo archive: [10.5281/zenodo.23970091](https://doi.org/10.5281/zenodo.23970091) (v1: [10.5281/zenodo.18445586](https://doi.org/10.5281/zenodo.18445586))
+- Preregistered verdict: `SUPPORTED` (3 of 3 datasets)
+- Key logged results: sharing one point-in-time feature definition across offline backfill (`70%` arrival split) and online serving (`30%` replay) raises online ROC-AUC over a dual batch/request implementation by `+0.086` on `adult` (95% CI `[0.063, 0.109]`), `+0.222` on `bank-marketing` (`[0.171, 0.274]`), and `+0.139` on `credit-g` (`[0.072, 0.205]`), with `0%` single-path skew when online reads complete. Content-hash lineage (`SHA-256` over data order, code, resolved parameters, environment, and fitted tree arrays) and a fail-closed CI gate (`AUC` margin `0.005` plus `<=1%` replay skew) block injected serving regressions before registry promotion.
+- Reproduce everything: `python v2/code/run_all.py` and `pytest v2/tests/test_core.py -v`
 
-Every number in the v2 paper is produced by this code from logged results. Claims from v1 that had no
-supporting data were removed; `v2/REVIEW.md` lists them.
+Every number in the v2 paper comes directly from logged outputs in `v2/results/`. Unsupported v1 claims were removed and documented in [`v2/REVIEW.md`](v2/REVIEW.md).
 <!-- v2-release -->
 
-**Author:** Bhavin Kotak (kotak.bhavin@gmail.com | bhavin.kotak@ibm.com)
+## Reference library (`src/`)
 
-Implementation of concepts from the research paper: *"Unified Machine Learning Pipeline Architecture for Enterprise-Scale Model Development and Deployment"*
+The `src/` package contains the v1 Python pipeline components (*Unified Machine Learning Pipeline Architecture for Enterprise-Scale Model Development and Deployment*): `FeatureStore`, `ModelRegistry` with stage transitions, `ExperimentTracker`, `MLPipeline`, and synthetic dataset generators.
 
-## Overview
-
-This code project demonstrates a complete, integrated ML pipeline architecture with:
-
-- **Feature Store**: Centralized feature management with versioning
-- **Model Registry**: Model versioning, lifecycle management, A/B testing support
-- **Experiment Tracker**: MLflow-compatible experiment tracking
-- **ML Pipeline**: End-to-end orchestration tying all components together
-
-## Project Structure
+## Project layout
 
 ```
 unified-ml-pipelines/
+├── docs/diagrams/              # Editorial architecture diagram (.html + .svg)
+├── v2/
+│   ├── code/umlp/              # Shared vs dual features, SHA-256 lineage, fail-closed CI gate
+│   ├── code/run_all.py         # End-to-end v2 reproduction entrypoint
+│   ├── paper/                  # LaTeX source and compiled main.pdf
+│   ├── preregistration.json    # Locked hypothesis and decision rules
+│   ├── results/                # Logged CSV/JSON outputs and verdict.json
+│   └── tests/test_core.py      # Unit tests for skew, lineage, and gating
 ├── src/
-│   ├── __init__.py
-│   ├── ml_pipeline.py        # Core pipeline components
-│   └── data_generators.py    # Synthetic data generation
-├── tests/
-│   └── test_ml_pipeline.py   # Comprehensive test suite
-├── data/                     # Generated data and artifacts
-├── configs/                  # Configuration files
-├── requirements.txt
-└── README.md
+│   ├── ml_pipeline.py          # FeatureStore, ModelRegistry, ExperimentTracker, MLPipeline
+│   └── data_generators.py      # MLExperimentDataGenerator, FeatureDataGenerator
+├── tests/test_ml_pipeline.py   # Unit tests for src/
+└── requirements.txt
 ```
 
 ## Installation
 
 ```bash
-# Create virtual environment
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
+source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-## Quick Start
+## Quick start (`src/`)
 
-### Basic Usage
+### End-to-end pipeline
 
 ```python
 from src.ml_pipeline import MLPipeline, MLPipelineConfig, TaskType
 from src.data_generators import MLExperimentDataGenerator
 
-# Generate synthetic data
 data_gen = MLExperimentDataGenerator(random_seed=42)
 df = data_gen.generate_classification_dataset(n_samples=2000)
 
-# Configure pipeline
 config = MLPipelineConfig(
     experiment_name="fraud_detection",
     task_type=TaskType.CLASSIFICATION,
     random_seed=42
 )
 
-# Initialize and run pipeline
 pipeline = MLPipeline(config)
 pipeline.prepare_data(df, target_column='target')
 results = pipeline.train_and_evaluate('random_forest')
-
 print(f"Accuracy: {results['test_metrics']['accuracy']:.4f}")
 ```
 
-### Feature Store Usage
+### Feature store and model registry
 
 ```python
-from src.ml_pipeline import FeatureStore
+from src.ml_pipeline import FeatureStore, ModelRegistry, ModelStage
 
 fs = FeatureStore("./my_features")
-
-# Register features
 fs.register_feature("customer_age", "int", description="Customer age in years")
 fs.register_feature("total_spend", "float", description="Total spending amount")
-
-# Ingest data
 fs.ingest_features(df, ['customer_age', 'total_spend'])
-
-# Retrieve features
 features = fs.get_features(['customer_age', 'total_spend'], entity_ids=[1, 2, 3])
-```
-
-### Model Registry Usage
-
-```python
-from src.ml_pipeline import ModelRegistry, ModelStage
 
 registry = ModelRegistry("./models")
-
-# Register a trained model
 model_id = registry.register_model(
     model=trained_model,
     model_name="fraud_detector",
     metrics={'accuracy': 0.95, 'f1': 0.92},
-    parameters=model.get_params(),
+    parameters=trained_model.get_params(),
     feature_names=['age', 'amount', 'distance']
 )
-
-# Promote to production
 registry.transition_stage(model_id, ModelStage.PRODUCTION)
-
-# Load production model
-model, metadata = registry.load_model("fraud_detector", stage=ModelStage.PRODUCTION)
 ```
 
-### Experiment Tracking
+### Experiment tracker
 
 ```python
 from src.ml_pipeline import ExperimentTracker
 
 tracker = ExperimentTracker("my_experiment")
-
-run_id = tracker.start_run("baseline_model")
+tracker.start_run("baseline_model")
 tracker.log_params({'learning_rate': 0.01, 'batch_size': 32})
 tracker.log_metric('accuracy', 0.95)
-tracker.log_metric('loss', 0.15)
 tracker.end_run()
-
-# Find best run
 best = tracker.get_best_run('accuracy', maximize=True)
 ```
 
-## Running the Demo
+## Running studies and tests
 
 ```bash
-cd /path/to/unified-ml-pipelines
+# Reproduce the v2 skew, lineage, and gating study
+python v2/code/run_all.py
+pytest v2/tests/test_core.py -v
+
+# Run v1 demo and unit tests
 python src/ml_pipeline.py
-```
-
-This will:
-1. Generate synthetic classification data
-2. Configure the ML pipeline
-3. Train multiple models (Logistic Regression, Random Forest, Gradient Boosting)
-4. Compare model performance
-5. Register the best model
-6. Demonstrate feature store and model registry operations
-
-## Running Tests
-
-```bash
-# Run all tests
 pytest tests/test_ml_pipeline.py -v
-
-# Run with coverage
-pytest tests/test_ml_pipeline.py -v --cov=src
-
-# Run specific test class
-pytest tests/test_ml_pipeline.py::TestFeatureStore -v
 ```
 
-## Key Components
+## Module map
 
-### MLPipelineConfig
-
-Central configuration for the entire pipeline:
-
-```python
-@dataclass
-class MLPipelineConfig:
-    experiment_name: str = "default_experiment"
-    task_type: TaskType = TaskType.CLASSIFICATION
-    random_seed: int = 42
-    test_size: float = 0.2
-    cv_folds: int = 5
-    feature_store_path: str = "./feature_store"
-    model_registry_path: str = "./model_registry"
-    tracking_uri: str = "./mlruns"
-```
-
-### Supported Model Types
-
-- `logistic_regression`: Logistic Regression with configurable regularization
-- `random_forest`: Random Forest Classifier with 100 estimators
-- `gradient_boosting`: Gradient Boosting Classifier
-
-### Metrics Tracked
-
-**Classification:**
-- Accuracy, Precision, Recall, F1-Score, AUC-ROC
-
-**Regression:**
-- MSE, MAE, R²
-
-## Data Generators
-
-### MLExperimentDataGenerator
-
-Generates synthetic ML datasets:
-
-```python
-gen = MLExperimentDataGenerator(random_seed=42)
-
-# Classification
-clf_data = gen.generate_classification_dataset(
-    n_samples=1000,
-    n_features=10,
-    n_informative=5,
-    class_weight=0.3  # 30% positive class
-)
-
-# Regression
-reg_data = gen.generate_regression_dataset(
-    n_samples=1000,
-    n_features=10
-)
-```
-
-### FeatureDataGenerator
-
-Generates realistic feature store data:
-
-```python
-gen = FeatureDataGenerator()
-customers = gen.generate_customer_features(1000)
-transactions = gen.generate_transaction_features(5000)
-products = gen.generate_product_features(500)
-```
-
-## Architecture Alignment
-
-This implementation aligns with the paper's proposed architecture:
-
-| Paper Concept | Implementation |
-|--------------|----------------|
-| Feature Store | `FeatureStore` class with versioning, ingestion, retrieval |
-| Model Registry | `ModelRegistry` class with stages, versioning, lifecycle |
-| Experiment Tracking | `ExperimentTracker` class (MLflow-compatible) |
-| Pipeline Orchestration | `MLPipeline` class integrating all components |
+| Capability | v2 study (`v2/code/umlp/`) | v1 library (`src/`) |
+|------------|----------------------------|---------------------|
+| Feature parity | Point-in-time single definition vs 5-source dual skew (`features.py`, `skew.py`) | `FeatureStore` (`ml_pipeline.py`) |
+| Artifact lineage | Explicit vs resolved `SHA-256` data, code, env, and tree hashes (`lineage.py`) | `ExperimentTracker` (`ml_pipeline.py`) |
+| Release gate | Fail-closed offline AUC + `<=1%` replay skew check (`gate.py`) | Stage transitions in `ModelRegistry` |
+| Serving verification | `Registry.load` checks fitted `model_hash` before serving (`gate.py`) | `ModelRegistry.load_model` |
 
 ## License
 
-MIT License - See research paper for full attribution.
+MIT License.
